@@ -244,7 +244,7 @@ class SalesDataAnalysis:
         )
 
         top_customers.to_csv(
-            "top_customers_report.csv"
+            ".\reports\top_customers_report.csv"
         )
 
         product_revenue = (
@@ -279,66 +279,15 @@ class SalesDataAnalysis:
 # ------------------------
 # Main Program
 # ------------------------
+if __name__ == "__main__":
+    analyzer = SalesAnalyzer()
+    analyzer.load_data("data/sales_data.csv")
+    analyzer.clean_data()
+    analyzer.top_spending_customers()
+    analyzer.repeat_vs_one_time_buyers()
+    analyzer.daily_order_volume()
+    analyzer.export_report()
 
-sales = SalesDataAnalysis()
+     
 
-while True:
-
-    print("\n" + "=" * 50)
-    print(" SALES DATA ANALYSIS SYSTEM ")
-    print("=" * 50)
-
-    print("1. Load Sales Data")
-    print("2. Explore Data")
-    print("3. Clean Data")
-    print("4. Verify Data")
-    print("5. Analyze Payment Methods")
-    print("6. Top Spending Customers")
-    print("7. Repeat vs One-Time Buyers")
-    print("8. Daily Order Volume Trend")
-    print("9. Top 10 Products by Revenue")
-    print("10. Orders by Customer Segment")
-    print("11. Export Business Reports")
-    print("0. Exit")
-
-    choice = input("\nEnter Choice: ")
-
-    if choice == "1":
-        sales.load_data()
-
-    elif choice == "2":
-        sales.display_dataset()
-
-    elif choice == "3":
-        sales.clean_dataset()
-
-    elif choice == "4":
-        sales.verify_data()
-
-    elif choice == "5":
-        sales.payment_analysis()
-
-    elif choice == "6":
-        sales.top_spending_customers()
-
-    elif choice == "7":
-        sales.customer_purchase_behavior()
-
-    elif choice == "8":
-        sales.daily_order_volume()
-
-    elif choice == "9":
-        sales.top_products_revenue()
-
-    elif choice == "10":
-        sales.orders_by_segment()
-
-    elif choice == "11":
-        sales.export_reports()
-
-    elif choice == "0":
-        print("\nThank You For Using Sales Data Analysis System")
-        break
-
-    else:
-        print("\nInvalid Choice!")
+   
