@@ -281,12 +281,19 @@ class SalesDataAnalysis:
 # ------------------------
 if __name__ == "__main__":
     analyzer = SalesDataAnalysis()
-    analyzer.load_data()
-    analyzer.clean_data()
+    analyzer.clean_dataset()
+
     analyzer.top_spending_customers()
-    analyzer.repeat_vs_one_time_buyers()
+
+    analyzer.customer_purchase_behavior()
+
     analyzer.daily_order_volume()
-    analyzer.export_report()
+
+    analyzer.top_products_revenue()
+
+    analyzer.orders_by_segment()
+
+    analyzer.export_reports()
 
      
 
