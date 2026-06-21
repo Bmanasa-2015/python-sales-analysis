@@ -12,7 +12,11 @@ class SalesDataAnalysis:
         url = "https://github.com/Bmanasa-2015/python-flask-project/raw/refs/heads/main/Retail_sales_data.csv"
         self.df = pd.read_csv(url)
         print("\nData Loaded Successfully!")
+        print("Rows:", len(self.df))
+        print("Columns:", self.df.columns.tolist())
 
+    except Exception as e:
+        print("Error loading data:", e)
     # Display Dataset
     def display_dataset(self):
 
@@ -281,6 +285,7 @@ class SalesDataAnalysis:
 # ------------------------
 if __name__ == "__main__":
     analyzer = SalesDataAnalysis()
+    analyzer.load_data()
     analyzer.clean_dataset()
 
     analyzer.top_spending_customers()
