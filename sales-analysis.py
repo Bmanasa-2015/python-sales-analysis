@@ -280,8 +280,8 @@ class SalesDataAnalysis:
 # Main Program
 # ------------------------
 if __name__ == "__main__":
-    analyzer = SalesAnalyzer()
-    analyzer.load_data("data/sales_data.csv")
+    analyzer = SalesDataAnalysis()
+    analyzer.load_data()
     analyzer.clean_data()
     analyzer.top_spending_customers()
     analyzer.repeat_vs_one_time_buyers()
