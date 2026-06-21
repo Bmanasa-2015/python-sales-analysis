@@ -15,8 +15,7 @@ class SalesDataAnalysis:
         print("Rows:", len(self.df))
         print("Columns:", self.df.columns.tolist())
 
-    except Exception as e:
-        print("Error loading data:", e)
+    
     # Display Dataset
     def display_dataset(self):
 
