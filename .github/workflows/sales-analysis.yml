@@ -29,7 +29,7 @@ jobs:
 
     - name: Run Sales Analysis
       run: |
-        python sales_analysis.py
+        python sales_analyss.py
 
     - name: Upload Reports
       uses: actions/upload-artifact@v4
