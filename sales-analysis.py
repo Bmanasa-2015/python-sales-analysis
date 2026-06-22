@@ -181,7 +181,7 @@ class SalesDataAnalysis:
 
         plt.savefig("Visualization/daily-order.png")
 
-        plt.show()
+        plt.close()
 
     # Top Products Revenue
     def top_products_revenue(self):
@@ -210,8 +210,7 @@ class SalesDataAnalysis:
 
         plt.tight_layout()
         plt.savefig("Visualization/top-products.png")
-        plt.show()
-
+        plt.close()
     # Orders by Segment
     def orders_by_segment(self):
 
@@ -237,8 +236,7 @@ class SalesDataAnalysis:
 
         plt.tight_layout()
         plt.savefig("Visualization/orders-by-customersegment.png")
-        plt.show()
-
+        plt.close()
     # Export Reports
     def export_reports(self):
 
