@@ -245,40 +245,25 @@ class SalesDataAnalysis:
             self.df.groupby("Customer ID")
             ["Total Sales Amount"]
             .sum()
-            .sort_values(ascending=False)
-        )
-
-       os.makedirs("reports", exist_ok=True)
-
-      
-	
-
+            .sort_values(ascending=False))
         product_revenue = (
             self.df.groupby("Product Name")
             ["Total Sales Amount"]
             .sum()
-            .sort_values(ascending=False)
-        )
-
-        
-
+            .sort_values(ascending=False) )   
         city_sales = (
             self.df.groupby("City")
             ["Total Sales Amount"]
             .sum()
-            .sort_values(ascending=False)
-        )
+            .sort_values(ascending=False))
 
         os.makedirs("reports", exist_ok=True)
 
-        top_customers.to_csv(
-    "reports/top_customers_report.csv")
+        top_customers.to_csv("reports/top_customers_report.csv")
 
-        product_revenue.to_csv(
-    "reports/product_revenue_report.csv")
+        product_revenue.to_csv("reports/product_revenue_report.csv")
 
-        city_sales.to_csv(
-    "reports/city_sales_report.csv")
+        city_sales.to_csv("reports/city_sales_report.csv")
 
         print("\nReports Exported Successfully!")
 
