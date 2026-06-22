@@ -208,7 +208,7 @@ class SalesDataAnalysis:
         plt.ylabel("Revenue")
 
         plt.tight_layout()
-        plt.savefig("Visualization/top-products.png"
+        plt.savefig("Visualization/top-products.png")
         plt.show()
 
     # Orders by Segment
@@ -235,7 +235,7 @@ class SalesDataAnalysis:
         plt.ylabel("Orders")
 
         plt.tight_layout()
-        plt.savefig("Visualization/orders-by-customersegment.png"
+        plt.savefig("Visualization/orders-by-customersegment.png")
         plt.show()
 
     # Export Reports
