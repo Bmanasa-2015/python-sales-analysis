@@ -189,7 +189,7 @@ class SalesDataAnalysis:
         if self.df is None:
             print("Please load data first.")
             return
-       os.makedirs("Visualization", exist_ok=True) 
+        os.makedirs("Visualization", exist_ok=True) 
         product_revenue = (
             self.df.groupby("Product Name")
             ["Total Sales Amount"]
