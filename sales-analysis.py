@@ -147,7 +147,7 @@ class SalesDataAnalysis:
 
         print("\nRepeat Buyers:", repeat_buyers)
         print("One-Time Buyers:", one_time_buyers)
-    os.makedirs("Visualization", exist_ok=True) 
+    
     # Daily Order Volume Trend
     def daily_order_volume(self):
 
@@ -156,7 +156,7 @@ class SalesDataAnalysis:
             return
 
         self.df['Date'] = pd.to_datetime(self.df['Date'])
-
+        os.makedirs("Visualization", exist_ok=True) 
         daily_orders = (
             self.df.groupby(self.df['Date'].dt.date)
             ['Order ID']
@@ -178,6 +178,7 @@ class SalesDataAnalysis:
         plt.xticks(rotation=45)
 
         plt.tight_layout()
+
         plt.savefig("Visualization/daily-order.png")
 
         plt.show()
@@ -188,7 +189,7 @@ class SalesDataAnalysis:
         if self.df is None:
             print("Please load data first.")
             return
-
+       os.makedirs("Visualization", exist_ok=True) 
         product_revenue = (
             self.df.groupby("Product Name")
             ["Total Sales Amount"]
@@ -217,7 +218,7 @@ class SalesDataAnalysis:
         if self.df is None:
             print("Please load data first.")
             return
-
+        os.makedirs("Visualization", exist_ok=True) 
         segment_orders = (
             self.df['Customer Segment']
             .value_counts()
