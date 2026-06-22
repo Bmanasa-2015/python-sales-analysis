@@ -1,5 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import os
+
 
 
 class SalesDataAnalysis:
@@ -246,9 +248,10 @@ class SalesDataAnalysis:
             .sort_values(ascending=False)
         )
 
-        top_customers.to_csv(
-            ".\reports\top_customers_report.csv"
-        )
+       os.makedirs("reports", exist_ok=True)
+
+      
+	
 
         product_revenue = (
             self.df.groupby("Product Name")
@@ -257,9 +260,7 @@ class SalesDataAnalysis:
             .sort_values(ascending=False)
         )
 
-        product_revenue.to_csv(
-            "product_revenue_report.csv"
-        )
+        
 
         city_sales = (
             self.df.groupby("City")
@@ -268,9 +269,16 @@ class SalesDataAnalysis:
             .sort_values(ascending=False)
         )
 
+        os.makedirs("reports", exist_ok=True)
+
+        top_customers.to_csv(
+    "reports/top_customers_report.csv")
+
+        product_revenue.to_csv(
+    "reports/product_revenue_report.csv")
+
         city_sales.to_csv(
-            "city_sales_report.csv"
-        )
+    "reports/city_sales_report.csv")
 
         print("\nReports Exported Successfully!")
 
