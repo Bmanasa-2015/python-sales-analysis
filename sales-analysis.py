@@ -147,7 +147,7 @@ class SalesDataAnalysis:
 
         print("\nRepeat Buyers:", repeat_buyers)
         print("One-Time Buyers:", one_time_buyers)
-
+    os.makedirs("Visualization", exist_ok=True) 
     # Daily Order Volume Trend
     def daily_order_volume(self):
 
