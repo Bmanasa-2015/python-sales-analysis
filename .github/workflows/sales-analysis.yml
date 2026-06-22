@@ -31,24 +31,10 @@ jobs:
       run: |
         python sales-analysis.py
 
-    - name: Verify Generated Files
-      run: |
-        echo "Current Directory:"
-        pwd
-
-        echo "All Files:"
-        ls -R
-
-        echo "Reports Folder:"
-        ls -la reports || echo "reports folder not found"
-
-        echo "Visualization Folder:"
-        ls -la visualization || echo "visualizations folder not found"
-
     - name: Upload Reports
       uses: actions/upload-artifact@v4
       with:
         name: sales-report
         path: |
-          reports/**
-          visualizations/**
+          reports/
+          Visualization/
